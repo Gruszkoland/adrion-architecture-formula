@@ -10,10 +10,8 @@ Changelog v5.6:
 """
 
 import math
-import json
 import re
 import time
-from pathlib import Path
 from types import MappingProxyType
 from typing import Dict, Final, Tuple
 
@@ -277,42 +275,3 @@ class TrinityEngine(metaclass=_TrinityEngineMeta):
             "imbalance_std_dev":     IMBALANCE_STD_DEV,
             "asymmetry_spread":      ASYMMETRY_SPREAD,
         }
-
-
-# ── Guardian Laws Loader ─────────────────────────────────────────────────────
-
-_GUARDIAN_LAWS_FILE = "GUARDIAN_LAWS_CANONICAL.json"
-
-
-def load_guardian_laws(path: str = "") -> Dict:
-    """
-    Load the canonical 9 Guardian Laws from GUARDIAN_LAWS_CANONICAL.json.
-
-    Searches for the file in:
-      1. Explicit path (if provided)
-      2. Repository root (parent of core/)
-
-    Returns:
-        Parsed JSON dict with keys: version, laws (list of 9 laws).
-
-    Raises:
-        FileNotFoundError: if JSON file not found
-        ValueError: if JSON structure invalid or laws count != 9
-    """
-    if path:
-        p = Path(path)
-    else:
-        p = Path(__file__).parent.parent / _GUARDIAN_LAWS_FILE
-
-    if not p.exists():
-        raise FileNotFoundError(f"Guardian Laws file not found: {p}")
-
-    with open(p, "r", encoding="utf-8") as f:
-        data = json.load(f)
-
-    if "laws" not in data or not isinstance(data["laws"], list):
-        raise ValueError("Invalid Guardian Laws JSON: missing 'laws' array")
-    if len(data["laws"]) != 9:
-        raise ValueError(f"Expected 9 Guardian Laws, got {len(data['laws'])}")
-
-    return data
