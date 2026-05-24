@@ -1,15 +1,16 @@
 {
-  "version": "3.0",
-  "schema_note": "Single source of truth for all Guardian Laws. G1-G9 canonical (D^162 math). G10-G11 runtime extensions.",
-  "math_note": "D^162 = P^3 (Trinity) x H^6 (Hexagon stages) x G^9 (Guardian Laws). Trinity and Hexagon are NOT guardians.",
+  "version": "3.1",
+  "schema_note": "Single source of truth for the 9 canonical Guardian Laws. G10/G11 moved to config/personas.yml as agent personas — they are NOT Guardian Laws.",
+  "math_note": "D^162 = P^3 (Trinity) x H^6 (Hexagon stages) x G^9 (Guardian Laws). This equation is immutable.",
   "weight_map": {
     "CRITICAL": 10,
     "HIGH": 2,
     "MEDIUM": 1
   },
   "deny_weighted_threshold": 4,
-  "hexagon_note": "6 Hexagon stages (Inventory, Empathy, Process, Debate, Healing, Action) are pipeline steps — NOT guardians. Previously mislabelled as '6 Guardian Personas'.",
-  "trinity_note": "3 Trinity perspectives (Material, Intellectual, Essential) are a separate D^162 axis — NOT guardians.",
+  "hexagon_note": "6 Hexagon stages (Inventory, Empathy, Process, Debate, Healing, Action) are pipeline steps — NOT guardians.",
+  "trinity_note": "3 Trinity perspectives (Material, Intellectual, Essential) are a D^162 axis — NOT guardians.",
+  "persona_note": "Operational personas (Librarian, SAP, Auditor, Sentinel, Architect, Healer, Amplifier, BoosterLever, Chronos, Evolution, RelationalCare, Glos Krytyka, Archetyp Harmonii, ...) are defined in config/personas.yml. They operate WITHIN this matrix — they never modify it.",
   "laws": [
     {
       "id": "G1",
@@ -26,8 +27,7 @@
       "runtime_name": "Harmony",
       "severity": "MEDIUM",
       "persona": "SAP",
-      "description": "Balance between competing objectives; analysis must be genuine",
-      "note": "runtime_name was 'Truth' in v2.0 — corrected",
+      "description": "Balance competing objectives; genuine analysis",
       "threshold": 0.87
     },
     {
@@ -64,7 +64,6 @@
       "severity": "HIGH",
       "persona": "Healer",
       "description": "Outputs must be genuine and free from deception; LLM output non-frozen",
-      "note": "runtime_name was 'Nonmaleficence' in v2.0 (bug). Implemented as _law_authenticity() since v4.0.",
       "threshold": 0.87
     },
     {
@@ -74,7 +73,6 @@
       "severity": "CRITICAL",
       "persona": "system-wide",
       "description": "All data remains local; no unsolicited contact without consent",
-      "note": "runtime_name was 'Autonomy' in v2.0 — corrected",
       "threshold": 0.95,
       "veto": true
     },
@@ -85,7 +83,6 @@
       "severity": "CRITICAL",
       "persona": "system-wide",
       "description": "Never cause harm; do not bid outside fair budget range",
-      "note": "runtime_name was 'Justice' in v2.0 — corrected",
       "threshold": 0.95,
       "veto": true
     },
@@ -99,25 +96,5 @@
       "threshold": 0.87
     }
   ],
-  "runtime_extensions": {
-    "note": "G10-G11 active in guardian.py but outside canonical 9. Do not affect 162D tensor product. Candidates for future D^198 = 3x6x11.",
-    "laws": [
-      {
-        "id": "G10",
-        "name": "Evolution",
-        "runtime_name": "Evolution",
-        "severity": "HIGH",
-        "description": "Errors drive improvement; PME feedback loops active",
-        "added_in": "v4.0"
-      },
-      {
-        "id": "G11",
-        "name": "RelationalCare",
-        "runtime_name": "RelationalCare",
-        "severity": "MEDIUM",
-        "description": "Respect user attention budget; EBDI Arousal threshold transparency",
-        "added_in": "v4.0"
-      }
-    ]
-  }
+  "immutability_note": "These 9 laws are the floor, not the ceiling. The agent swarm may grow to 34+ personas. Laws do not grow — they remain 9."
 }
