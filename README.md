@@ -1,48 +1,63 @@
-# ADRION 369 — Architecture & Security
+# ADRION 369 — Architektura Etycznej Inteligencji
 
-[![CI](https://github.com/Gruszkoland/adrion-369-architecture/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/Gruszkoland/adrion-369-architecture/actions/workflows/ci.yml)
+> *„Inteligencja bez etyki to narzędzie bez sternika."*
 
-Security-hardened architecture, core Python pipeline, and Ecosystem v2.0 for the **ADRION 369** autonomous decision system.
+ADRION 369 to architektura systemu AI zbudowana na trzech filarach, sześciu trybach i dziewięciu strażnikach.
+Liczba 369 nie jest przypadkowa — to wzór leżący u podstaw struktury decyzyjnej systemu.
 
-## Structure
+---
 
-```
-arbitrage/        # HexagonProcessor — 6-stage decision pipeline (Ecosystem v2.0 hooks)
-core/             # TrinityEngine · SecurityHardeningEngine · Protocol333 orchestrator
-ecosystem/        # Gardener · Antifragility · AttentionEconomy · PlayfulExploration
-tests/            # 204 green tests (core + ecosystem + protocol333)
-docs/             # Security hardening docs (v5.1–v5.6)
-```
+## Co to jest?
 
-## Tests
+System AI, który **nie może** podjąć decyzji sprzecznej z wartościami etycznymi — nie dlatego że jest tak zaprogramowany w jednej linii kodu, ale dlatego że etyka jest architekturą, nie regułą.
 
-```bash
-pip install pytest pytest-cov
-PYTHONPATH=. pytest tests/ -v --tb=short
-```
+Każda decyzja przechodzi przez 162-wymiarową przestrzeń oceny:
+**3 zasady × 6 trybów × 9 strażników = 162 wymiary**
 
-**204 tests — all green:**
-- 99/99 core (trinity + security_hardening + penetration)
-- 88/88 ecosystem (antifragility + attention + gardener)
-- 17/17 protocol333 (Trinity→Hexagon→Security pipeline)
+---
 
-## Architecture
+## Trzy zasady (3)
 
-- **Protocol333** — full pipeline orchestrator: Trinity → Hexagon (6 stages) → Security Hardening, with Gardener hooks at every stage
-- **HexagonProcessor** — 6-stage sequential decision engine (Inventory → Empathy → Process → Debate → Healing → Action) with Ecosystem v2.0 Gardener repair hooks
-- **TrinityEngine** — 3-zone scoring (Material / Intellectual / Essential)
-- **SecurityHardeningEngine** — HMAC auth, rate limiting, circuit breaker, CVC
+| # | Zasada | Znaczenie |
+|---|--------|-----------|
+| P1 | **Ochrona** | System nigdy nie może działać ze szkodą dla człowieka |
+| P2 | **Mediacja** | W konflikcie wartości system szuka rozwiązania kompromisowego |
+| P3 | **Ewolucja** | System uczy się, ale tylko w granicach wyznaczonych przez P1 i P2 |
 
-## Versions
+---
 
-| Tag | What changed |
-|-----|-------------|
-| B10 | `arbitrage/__init__.py` — formal Python package |
-| B9  | `arbitrage/hexagon.py` — Gardener hooks stages 1-6 |
-| B8  | `core/protocol333.py` — Protocol333 orchestrator |
-| B7  | Ecosystem v2.0 (antifragility / attention / gardener) |
-| v5.6 | Final hardening, 99/99 tests green |
+## Sześć trybów (6)
 
-## License
+Każda zasada jest interpretowana przez sześć soczewek operacyjnych:
 
-MIT — Gruszkoland/ADRION 369
+`Analiza` → `Planowanie` → `Wykonanie` → `Weryfikacja` → `Uczenie` → `Raportowanie`
+
+---
+
+## Dziewięć Strażników (9)
+
+Każda decyzja systemu musi przejść przez 9 niezależnych weryfikatorów.
+Każdy Strażnik posiada **prawo veta**. Jeden sprzeciw = decyzja zablokowana.
+
+Szczegóły: [GUARDIAN_LAWS.md](GUARDIAN_LAWS.md)
+
+---
+
+## Dokumentacja
+
+| Dokument | Zawartość |
+|----------|-----------|
+| [GUARDIAN_LAWS.md](GUARDIAN_LAWS.md) | 9 Praw Strażników — opis i mechanizm veta |
+| [HOW_IT_WORKS.md](HOW_IT_WORKS.md) | Jak działa system — 4 warstwy architektury |
+| [USE_CASES.md](USE_CASES.md) | Zastosowania: Finanse, Zdrowie, Robotyka |
+| [ADRION_369_FORMULA.md](ADRION_369_FORMULA.md) | Wzór matematyczny 3×6×9=162D |
+
+---
+
+## Repozytorium publiczne
+
+To repozytorium zawiera **filozofię i wzór** systemu ADRION 369.
+Implementacja techniczna jest dostępna dla partnerów i inwestorów.
+
+**Kontakt:** [github.com/Gruszkoland](https://github.com/Gruszkoland)
+**Licencja:** MPL-2.0
