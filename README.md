@@ -61,3 +61,21 @@ Implementacja techniczna jest dostępna dla partnerów i inwestorów.
 
 **Kontakt:** [github.com/Gruszkoland](https://github.com/Gruszkoland)
 **Licencja:** MPL-2.0
+
+
+---
+
+## Ekosystem ADRION 369
+
+To repozytorium zawiera **filozofię i wzór** systemu.
+Projekt jest zbudowany w 3 warstwach:
+
+| Warstwa | Repozytorium | Opis |
+|---------|-------------|------|
+| 3 (ten) | **adrion-architecture-formula** | Formuła publiczna — dla każdego |
+| 2 | [adrion-369-architecture](https://github.com/Gruszkoland/adrion-369-architecture) | Specyfikacja techniczna — dla partnerów |
+| 1 | [adrion-369](https://github.com/Gruszkoland/adrion-369) | Pełny system — prywatny |
+| Runtime | [AIOS-MVP](https://github.com/Gruszkoland/AIOS-MVP) | Rust kernel + demo |
+
+**Zainteresowany warstwą techniczną?**
+Skontaktuj się: [github.com/Gruszkoland](https://github.com/Gruszkoland)
